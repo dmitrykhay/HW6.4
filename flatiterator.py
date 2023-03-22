@@ -4,8 +4,8 @@ class FlatIterator:
         self.list_of_lists = list_of_lists
 
     def __iter__(self):
-        self.outer_list_cursor = -1
-        self.inner_list_cursor = 0
+        self.outer_list_cursor = 0
+        self.inner_list_cursor = -1
         return self
 
     def __next__(self):
@@ -34,7 +34,6 @@ def test_1():
         assert flat_iterator_item == check_item
 
     assert list(FlatIterator(list_of_lists_1)) == ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]
-
 
 if __name__ == '__main__':
     test_1()
